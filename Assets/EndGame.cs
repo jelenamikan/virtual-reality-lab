@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 public class EndGame : MonoBehaviour
 {
 
+    public float time;
+
+    void Start()
+    {
+        time = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > 120)
+        time += Time.deltaTime;
+        if(time > 30)
         {
             Debug.Log("Quit");
             SceneManager.LoadScene("EndMenu");
