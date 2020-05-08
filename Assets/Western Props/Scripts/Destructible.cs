@@ -11,6 +11,8 @@ using UnityEngine;
 public class Destructible : MonoBehaviour {
 
 	public GameObject destroyedVersion;	// Reference to the shattered version of the object
+    public GameObject candle1;
+    public GameObject candle2;
 
 	// If the player clicks on the object
 	void OnMouseDown ()
@@ -19,6 +21,8 @@ public class Destructible : MonoBehaviour {
 		Instantiate(destroyedVersion, transform.position, transform.rotation);
 		// Remove the current object
 		Destroy(gameObject);
-	}
+        candle1.GetComponent<Collider>().enabled = true;
+        candle2.GetComponent<Collider>().enabled = true;
+    }
 
 }
